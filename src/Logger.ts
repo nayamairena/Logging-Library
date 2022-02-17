@@ -9,8 +9,9 @@
  * @module
  */
 
-// This is a dummy definition just so that this file has at
-// least one export, which is required for the test suite to
-// run. Delete this once you've defined at least one export of
-// your own in this file.
-export let dummy = 0;
+/* This is a dummy definition just so that this file has at
+ * least one export, which is required for the test suite to
+ * run. Delete this once you've defined at least one export of
+ * your own in this file.
+ */
+export const dummy = 0;
