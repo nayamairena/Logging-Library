@@ -1,11 +1,10 @@
 const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: "development",
   devtool: "inline-source-map",
   entry: {
-    main: path.resolve(__dirname, 'src', 'Main.ts'),
+    main: path.resolve(__dirname, 'src', 'Logger.ts'),
   },
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -21,11 +20,4 @@ module.exports = {
       { test: /\.tsx?$/, loader: "ts-loader" },
     ],
   },
-  plugins: [
-    new CopyWebpackPlugin(
-      {
-        patterns: [path.resolve(__dirname, 'html')]
-      }
-    ),
-  ],
 };
