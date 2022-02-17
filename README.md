@@ -4,7 +4,7 @@ This is a project template for a simple library to log messages to the browser c
 
   - At any time, client code may create a new *logger*, which provides access to a *logging function*.
   - Each call to a logging function includes a message along with a *severity level*, which indicates whether the message is an *error* message, a *warning* message, an *informational* mesage, or a *debugging* message. These are the only possible severity levels.
-  - At any time, a logger object may be configured to either *display* or *ignore* messages associated with a given severity level. By default, all severity levels should be displayed.
+  - At any time, a logger object may be configured to either *display* or *ignore* messages associated with a given severity level. Each severity level is configured independently: for example, it is valid to have a logger configured to ignore *error* messages, display *warning* messages, ignore *informational* messages, and display *debug* messages. By default, all severity levels are displayed.
 
 This project is already set up with a build system and test framework, but you will be writing **all** of the library code from scratch.
 
