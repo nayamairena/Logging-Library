@@ -4,16 +4,16 @@
  * Naya Mairena
  *
  * Assignment 3 - CS410P: Code Revision and Review
- * 
- * There are four levels of severity:
- * 
- * `console.error()`
- * 
- * `console.warn()`
- * 
- * `console.info()`
- * 
- * `console.debug()`
+ *
+ * There are four levels of severity that will be utilized in this library:
+ *
+ * * `console.error()`
+ *
+ * * `console.warn()`
+ *
+ * * `console.info()`
+ *
+ * * `console.debug()`
  *
  *
  *
@@ -108,35 +108,35 @@ export class Logger {
     }
 
     /**
-    * This **method** allows for a severity level 
-    * to send a message to the console.
-    * Also checks if it is enabled or disabled.
-    *
-    * ```
-    * // consoleOutput definition for Logger class.
-    * consoleOutput(logNum: number, message: string): void {
-    *   if (logNum < 1 || logNum > 4)
-    *      console.error("Console type does not exist. Use a number 1 - 4.");
-    *   else if (logNum === 1 && this.logError === 1)
-    *       console.error(message);
-    *  else if (logNum === 2 && this.logWarn === 1)
-    *     console.warn(message);
-    *  else if (logNum === 3 && this.logInfo === 1)
-    *      console.info(message);
-    *  else if (logNum === 4 && this.logDebug === 1)
-    *    console.debug(message);
-    }
-    * }
-    * ```
-    * @usage
-    * ```
-    * // Call the consoleOutput method example.
-    * log.consoleOutput(1, message);
-    * ```
-    * @param logNum
-    * *logNum can only be a number from [1 - 4].*
-    * @param message
-    */
+     * This **method** allows for a severity level 
+     * to send a message to the console.
+     * Also checks if it is enabled or disabled.
+     *
+     * ```
+     * // consoleOutput definition for Logger class.
+     * consoleOutput(logNum: number, message: string): void {
+     *   if (logNum < 1 || logNum > 4)
+     *      console.error("Console type does not exist. Use a number 1 - 4.");
+     *   else if (logNum === 1 && this.logError === 1)
+     *       console.error(message);
+     *   else if (logNum === 2 && this.logWarn === 1)
+     *       console.warn(message);
+     *   else if (logNum === 3 && this.logInfo === 1)
+     *       console.info(message);
+     *   else if (logNum === 4 && this.logDebug === 1)
+     *       console.debug(message);
+     * }
+     * ```
+     * @usage
+     * ```
+     * // Call to the consoleOutput method example.
+     * const log = new Logger();
+     * log.consoleOutput(1, message);
+     * ```
+     * @param logNum
+     * *logNum can only be a number from [1 - 4].*
+     * @param message
+     */
     consoleOutput(logNum: number, message: string): void {
         if (logNum < 1 || logNum > 4)
             console.error("Console type does not exist. Use a number 1 - 4.");
@@ -150,6 +150,30 @@ export class Logger {
             console.debug(message);
     }
 
+    /**
+     * This **method** enables a severity level by setting equal to 1.
+     * ```
+     * //consoleEnable definition for Logger class.
+     * consoleEnable(logNum: number): void {
+     *   if (logNum === 1)
+     *      this.logError = 1;
+     *  else if (logNum === 2)
+     *      this.logWarn = 1;
+     *  else if (logNum === 3)
+     *      this.logInfo = 1;
+     *  else if (logNum === 4)
+     *      this.logDebug = 1;
+     * }
+     * ```
+     * @usage
+     * ```
+     * // Call to consoleEnable method example.
+     * const log = new Logger();
+     * log.consoleEnable(1);
+     * ```
+     * @param logNum
+     * *logNum can only be a number from [1 - 4].*
+     */
     consoleEnable(logNum: number): void {
         if (logNum === 1)
             this.logError = 1;
@@ -161,6 +185,30 @@ export class Logger {
             this.logDebug = 1;
     }
 
+    /**
+     * This **method** disables a severity level by setting equal to 0.
+     * ```
+     * //consoleDisable definition for Logger class.
+     * consoleDisable(logNum: number): void {
+     *   if (logNum === 1)
+     *      this.logError = 0;
+     *  else if (logNum === 2)
+     *      this.logWarn = 0;
+     *  else if (logNum === 3)
+     *      this.logInfo = 0;
+     *  else if (logNum === 4)
+     *      this.logDebug = 0;
+     * }
+     * ```
+     * @usage
+     * ```
+     * // Call to consoleDisable method example.
+     * const log = new Logger();
+     * log.consoleDisable(1);
+     * ```
+     * @param logNum
+     * *logNum can only be a number from [1 - 4].*
+     */
     consoleDisable(logNum: number): void {
         if (logNum === 1)
             this.logError = 0;
