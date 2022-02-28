@@ -3,21 +3,45 @@
  *
  * Naya Mairena
  *
- * Assignment 3 - CS410P: Code Revision and Review
+ * Winter 2022
  *
- * There are four levels of severity that will be utilized in this library:
+ * Assignment 3
  *
- * * `console.error()`
+ * CS410P: Code Revision and Review
  *
- * * `console.warn()`
+ * **Create a new instance of Logger class**
  *
- * * `console.info()`
+ * This is done by calling the constructor of the Logger class.
+ * ```
+ * const log = new Logger();
+ * ```
  *
- * * `console.debug()`
+ * **Enable or Disable Severity Level**
  *
+ * Utilize the methods in the Logger class to enable or disable.
+ * A number is used to correspond to the severity level:
+ * 1. `console.error()`
+ * 2. `console.warn()`
+ * 3. `console.info()`
+ * 4. `console.debug()`
  *
+ * ```
+ * //Enable console.error()
+ * log.consoleEnable(1);
+ * //Disable console.error()
+ * log.consoleDisable(1);
+ * ```
  *
+ * **Send Message to The Console**
  *
+ * Log message is created by utilizing the output method in the Logger Class.
+ *
+ * ```
+ * const log = new Logger();
+ * const message = "This is an error log";
+ * log.consoleOutput(1, message);
+ * ```
+ * *Reference the Logger Class section for more details on how to use.*
  * @module
  */
 
