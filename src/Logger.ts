@@ -3,7 +3,9 @@
  * **Logging Library**
  *
  * Naya Mairena
+ *
  * Assignment 3
+ *
  * CS410P: Code Revision and Review
  *
  * @module
@@ -15,38 +17,50 @@
  * your own in this file.
  */
 export class Logger {
-    logError: number;
-    logWarn: number;
-    logInfo: number;
-    logDebug: number;
-
-    enabled: boolean;
+    protected logError: number;
+    protected logWarn: number;
+    protected logInfo: number;
+    protected logDebug: number;
 
     constructor() {
         this.logError = 1;
-        this.logWarn = 2;
-        this.logInfo = 3;
-        this.logDebug = 4;
-
-        this.enabled = true;
+        this.logWarn = 1;
+        this.logInfo = 1;
+        this.logDebug = 1;
     }
 
-    consoleOutput(logNum: number, active: boolean, message: string): void {
-        if (logNum === this.logError && active)
+    consoleOutput(logNum: number, message: string): void {
+        if (logNum < 1 || logNum > 4)
+            console.error("Console type does not exist. Use a number 1 - 4.");
+        else if (logNum === 1 && this.logError === 1)
             console.error(message);
-        if (logNum === this.logWarn && active)
+        else if (logNum === 2 && this.logWarn === 1)
             console.warn(message);
-        if (logNum === this.logInfo && active)
+        else if (logNum === 3 && this.logInfo === 1)
             console.info(message);
-        if (logNum === this.logDebug && active)
+        else if (logNum === 4 && this.logDebug === 1)
             console.debug(message);
     }
 
-    consoleEnable(): void {
-        this.enabled = true;
+    consoleEnable(logNum: number): void {
+        if (logNum === 1)
+            this.logError = 1;
+        else if (logNum === 2)
+            this.logWarn = 1;
+        else if (logNum === 3)
+            this.logInfo = 1;
+        else if (logNum === 4)
+            this.logDebug = 1;
     }
 
-    consoleDisable(): void {
-        this.enabled = false;
+    consoleDisable(logNum: number): void {
+        if (logNum === 1)
+            this.logError = 0;
+        else if (logNum === 2)
+            this.logWarn = 0;
+        else if (logNum === 3)
+            this.logInfo = 0;
+        else if (logNum === 4)
+            this.logDebug = 0;
     }
 }
