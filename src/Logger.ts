@@ -1,20 +1,52 @@
 /**
- *
  * **Logging Library**
  *
  * Naya Mairena
  *
- * Assignment 3
+ * Assignment 3 - CS410P: Code Revision and Review
+ * 
+ * There are four levels of severity:
+ * 
+ * `console.error()`
+ * 
+ * `console.warn()`
+ * 
+ * `console.info()`
+ * 
+ * `console.debug()`
  *
- * CS410P: Code Revision and Review
+ *
+ *
  *
  * @module
  */
 
-/* This is a dummy definition just so that this file has at
- * least one export, which is required for the test suite to
- * run. Delete this once you've defined at least one export of
- * your own in this file.
+/**
+ * The Logger class allows for specified console logs
+ * to display messages to the console by using variables of class type Logger.
+ *
+ *- The four levels of severity held in **properties**:
+ *      - `logDebug`
+ *      - `logError`
+ *      - `logInfo`
+ *      - `logWarn`
+ *
+ * - The **properties** are of data type `number`
+ * and are initialized to 1 by the `constructor()` to automatically be enabled.
+ *
+ * - Severity level is enabled with **method**
+ * `consoleEnable()` by setting it equal to 1.
+ *
+ * - Severity level is disabled with **method**
+ * `consoleDisable()` by setting it equal to 0.
+ *
+ * - Severity level is used depending
+ * on the number sent into **method** `consoleOutput()`:
+ *      - 1: `console.error()`
+ *      - 2: `console.warn()`
+ *      - 3: `console.info()`
+ *      - 4: `console.debug()`
+ *
  */
 export class Logger {
     protected logError: number;
