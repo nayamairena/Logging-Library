@@ -132,7 +132,7 @@ export class Logger {
     }
 
     /**
-     * This **method** allows for a severity level 
+     * This **method** allows for a severity level
      * to send a message to the console.
      * Also checks if it is enabled or disabled.
      *
